@@ -14,13 +14,20 @@
             ],
         };
 
-        let strUsuario = JSON.stringify(usuario); // transformando em texto
+        /*let strUsuario = JSON.stringify(usuario); // transformando em texto
         console.log(1, usuario, typeof usuario); // objeto
         console.log(2, strUsuario, typeof strUsuario); // string
 
         let strUsuario2 = '{"nome":"João","idade":35,"filhos":[{"nome":"Ana","idade":13},{"nome":"Pedro","idade":10}]}'; 
         let usuario2 = JSON.parse(strUsuario2); // transformando em objeto
         console.log(3, usuario2, typeof usuario2); // objeto
+        */
+
+        localStorage.setItem('usuario', JSON.stringify(usuario));
+
+        let strUsuario = localStorage.getItem('usuario');
+        console.log(strUsuario, typeof strUsuario);
+
     </script>
 
 
