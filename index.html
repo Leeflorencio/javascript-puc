@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        let usuario = {
+            "nome": 'João',
+            "idade": 35,
+            "filhos": [
+                {nome: 'Ana', idade: 13},
+                {nome: 'Pedro', idade: 10}
+            ],
+        };
+
+        let strUsuario = JSON.stringify(usuario); // transformando em texto
+        console.log(1, usuario, typeof usuario); // objeto
+        console.log(2, strUsuario, typeof strUsuario); // string
+
+        let strUsuario2 = '{"nome":"João","idade":35,"filhos":[{"nome":"Ana","idade":13},{"nome":"Pedro","idade":10}]}'; 
+        let usuario2 = JSON.parse(strUsuario2); // transformando em objeto
+        console.log(3, usuario2, typeof usuario2); // objeto
+    </script>
+
+
+    <title>JavaScript</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+</body>
+</html>
