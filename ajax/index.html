@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>JavaScript AJAX</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script>
+            function ajax(){
+                try {
+                    let xhttp = new XMLHttpRequest();
+
+                    xhttp.onreadystatechange = function(){
+                        if(xhttp.readyState == 4){
+                            if(xhttp.status == 200){
+                                let usuario = JSON.parse(xhttp.responseText);
+                                nome.innerHTML = usuario.nome;
+                                idade.innerHTML = usuario.idade;
+                                filhos.innerHTML = usuario.filhos.map((e) => e.nome).join(', ');
+                            } else{
+                                console.warning('status: ' + xhttp.status);
+                            }
+                        }
+                    };
+
+                  xhttp.open('GET', 'dados.json', true)  
+                  xhttp.send();
+                } catch (error) {
+                    alert('Erro na comunicação com o servidor');
+                }
+            }
+            ajax();
+        </script>
+
+    </head>
+    <body>
+    
+        <h1>JavaScript - AJAX</h1>
+        <button onclick="ajax()">Carrega usuário</button>
+
+        <dl>
+            <dl>Nome:</dl><dd id="nome"></dd>
+            <dl>Idade:</dl><dd id="idade"></dd>
+            <dl>Filhos:</dl><dd id="filhos"></dd>
+        </dl>
+
+    </body>
+</html>

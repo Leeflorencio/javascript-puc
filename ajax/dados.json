@@ -1,0 +1,10 @@
+{
+    "nome": "Maria",
+    "idade": 26,
+    "filhos": [
+        {"nome": "Ana", "idade": 5},
+        {"nome": "João", "idade": 3}
+    ],
+
+    "casada": true
+}
