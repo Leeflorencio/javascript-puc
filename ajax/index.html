@@ -16,6 +16,7 @@
                         if(xhttp.readyState == 4){
                             if(xhttp.status == 200){
                                 let objeto = JSON.parse(xhttp.responseText);
+                                //resposta.innerHTML = objeto;
                                 console.log(objeto);
                             } else{
                                 console.warn('status: ' + xhttp.status);
@@ -23,7 +24,7 @@
                         }
                     };
 
-                  xhttp.open('GET', 'https://reqres.in/api/users?page=1', true)  
+                  xhttp.open('GET', 'https://reqres.in/api/users?page=1', true);
                   xhttp.send();
                 } catch (error) {
                     alert('Erro na comunicação com o servidor');
@@ -36,6 +37,7 @@
     
         <h1>JavaScript - AJAX</h1>
         <button onclick="ajax()">Carrega dados</button>
+
 
 
     </body>
